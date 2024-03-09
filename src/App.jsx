@@ -2,6 +2,7 @@ import { useLoaderData } from 'react-router-dom'
 import './App.css'
 import NavBar from './Component/NavBar'
 import CoffeeCard from './Component/CoffeeCard';
+// import { useState } from 'react';
 
 function App() {
    const coffees = useLoaderData()

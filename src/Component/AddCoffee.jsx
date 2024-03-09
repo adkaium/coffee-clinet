@@ -22,7 +22,12 @@ const AddCoffee = () => {
        })
        .then(res=>res.json())
        .then(data=>{
-        console.log(data);
+          {
+             if (data.acknowledged) {
+               alert("Your data added successed");
+             }
+             form.reset()
+          }
        })
 
     }
