@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CoffeeCard = ({coffee}) => {
   // const [remainDatat, setRmainData]=useState([])
@@ -9,7 +10,7 @@ const CoffeeCard = ({coffee}) => {
         alert('Are you Sure,you want to delete')
       }
       console.log(id);
-      fetch(`http://localhost:5000/coffee/${id}`,{
+      fetch(`http://localhost:5001/coffee/${id}`,{
         method: 'DELETE'
       }
       
@@ -31,8 +32,15 @@ const CoffeeCard = ({coffee}) => {
             <p>{taste}</p>
             <div className="card-actions justify-end">
               <button className="btn btn-primary">View</button>
-              <button className="btn btn-primary">Edith</button>
-              <button onClick={()=>handeleDelet(_id)} className="btn btn-primary">X</button>
+              <Link to={`updateCoffee/${_id}`}>
+                <button className="btn btn-primary">Edith</button>
+              </Link>
+              <button
+                onClick={() => handeleDelet(_id)}
+                className="btn btn-primary"
+              >
+                X
+              </button>
             </div>
           </div>
         </div>
